@@ -1,5 +1,5 @@
-#!/bin/bash
-
+​#!/bin/bash
+​
 # This checks if the number of arguments is correct
 # If the number of arguments is incorrect ( $# != 2) print error message and exit
 if [[ $# != 2 ]]
@@ -23,10 +23,10 @@ destinationDirectory=$2
 echo "Target directory: $targetDirectory"
 echo "Backup destination: $destinationDirectory"
 
-# Define a variable called currentTS as the current timestamp, expressed in seconds.
+# Define a variable called currentTS as the current timestamp, expressed in seconds
 currentTS=`date +%s`
 
-# Define a variable called backupFileName to store the name of the archived and compressed backup file that the script will create.
+# Define a variable called backupFileName to store the name of the archived and compressed backup file that the script will create
 backupFileName="backup-$currentTS.tar.gz"
 
 # Define a variable called origAbsPath with the absolute path of the current directory as the variable’s value.
@@ -51,7 +51,7 @@ do
   # if statement to check whether the $file was modified within the last 24 hours
   if ((`date -r $file +%s` > $yesterdayTS))
   then
-    toBackup+=($file)  # addiing the $file that was updated in the past 24-hours to the toBackup array.
+    toBackup+=($file)  # adding the $file that was updated in the past 24-hours to the toBackup array.
   fi
 done
 
